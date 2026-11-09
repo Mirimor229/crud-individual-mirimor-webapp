@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercados Financieros - CRUD</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="container">
+    <h1>Mercados Financieros</h1>
+
+    <div class="form-section">
+        <h2 id="form-title">Insertar Mercado Financiero</h2>
+        <form id="mercado-form">
+            <input type="hidden" id="mercado-id">
+            <div class="form-group">
+                <label for="fecha-vigencia">Fecha de Vigencia:</label>
+                <input type="date" id="fecha-vigencia" name="fechaVigencia" required>
+            </div>
+            <div class="form-group">
+                <label for="es-fija">¿Tasa Fija?:</label>
+                <select id="es-fija" name="esFija" required>
+                    <option value="true">Sí</option>
+                    <option value="false">No</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="valor-tasa">Valor Tasa:</label>
+                <input type="number" id="valor-tasa" name="valorTasa" required min="0" step="1">
+            </div>
+            <div class="form-actions">
+                <button type="submit" id="btn-submit" class="btn btn-primary">Guardar</button>
+                <button type="button" id="btn-cancel" class="btn btn-secondary" style="display:none;">Cancelar</button>
+            </div>
+        </form>
+    </div>
+
+    <div id="message" class="message" style="display:none;"></div>
+
+    <div class="table-section">
+        <h2>Listado de Mercados</h2>
+        <table id="mercados-table">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Fecha Vigencia</th>
+                <th>Tasa Fija</th>
+                <th>Valor Tasa</th>
+                <th>Acciones</th>
+            </tr>
+            </thead>
+            <tbody id="mercados-tbody"></tbody>
+        </table>
+    </div>
+</div>
+
+<script src="/scripts.js"></script>
+</body>
+</html>
